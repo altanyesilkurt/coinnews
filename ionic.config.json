@@ -1,0 +1,7 @@
+{
+  "name": "coinnews",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

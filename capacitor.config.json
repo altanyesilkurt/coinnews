@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "coinnews",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
