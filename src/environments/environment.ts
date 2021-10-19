@@ -2,7 +2,6 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
 
 
 export const environment = {
@@ -21,11 +20,9 @@ export const environment = {
     appId: '1:411750420372:web:c2b713135168ab81a6c981',
     measurementId: 'G-9CFR1Z2DV7'
   }
-/*// Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);*/
-};
 
+};
+  const app = initializeApp(environment.firebase);
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

@@ -58,15 +58,15 @@ LoginUser(value){
 
        this.authservice.setUser({
          username : resp.user.displayName,
+         email : resp.user.email,
          uid: resp.user.uid
        });
 
       const userProfile = this.firestore.collection('profile').doc(resp.user.uid);
 
        userProfile.get().subscribe( result=>{
-
         if(result.exists){
-          this.nav.navigateForward(['tabs']);
+          this.nav.navigateForward(['dashboard']);
         }else{
 
           this.firestore.doc(`profile/${this.authservice.getUID()}`).set({
@@ -85,5 +85,7 @@ LoginUser(value){
     console.log(err);
   }
 }
-
+  signUp(){
+    this.nav.navigateForward(['login']);
+  }
 }

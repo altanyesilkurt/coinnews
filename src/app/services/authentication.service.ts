@@ -1,9 +1,11 @@
 // authentication.service.ts
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import * as firebase from 'firebase/app';
 
 export interface UserPro {
   username: string;
+  email: string;
   uid: string;
 }
 
@@ -11,7 +13,7 @@ export interface UserPro {
   providedIn: 'root'
 })
 export class AuthenticateService {
-  private user : UserPro;
+  private user: UserPro;
 
   constructor(
     private afAuth: AngularFireAuth
@@ -56,6 +58,15 @@ export class AuthenticateService {
           reject();
         });
       }
+    });
+  }
+
+  userRegistration(value){
+    return new Promise<any> ( (resolve, reject)=>{
+      firebase.auth().createUserWithEmailAndPassword(value.email,value.password).then(
+        res => resolve(res),
+        error => reject(error)
+      );
     });
   }
 
