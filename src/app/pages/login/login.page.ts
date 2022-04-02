@@ -49,15 +49,17 @@ export class LoginPage implements OnInit {
   };
 
 
-  loginUser(value) {
-    this.authService.loginUser(value)
-      .then(res => {
-        console.log(res);
-        this.errorMessage = '';
-        this.navCtrl.navigateForward('/dashboard');
-      }, err => {
-        this.errorMessage = err.message;
-      });
+  loginUser() {
+    this.navCtrl.navigateForward('/loginscreen');
+
+    /*  this.authService.loginUser(value)
+        .then(res => {
+          console.log(res);
+          this.errorMessage = '';
+          this.navCtrl.navigateForward('/dashboard');
+        }, err => {
+          this.errorMessage = err.message;
+        });*/
   }
 
   goToRegisterPage() {

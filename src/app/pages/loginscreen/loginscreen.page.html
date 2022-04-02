@@ -12,7 +12,7 @@
       <ion-img src="assets/images/header1.png"></ion-img>
       <ion-card-content>
 
-    <form [formGroup]="validationFormUser" (ngSubmit)="LoginUser(validationFormUser.value)">
+    <form [formGroup]="validationFormUser" (ngSubmit)="loginUser(validationFormUser.value)">
         <div class="wrapform">
          <ion-item>
             <ion-input type="text" name="email" formControlName="email"  placeholder="Email">
